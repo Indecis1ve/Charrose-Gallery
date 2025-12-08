@@ -345,7 +345,7 @@ const UploadModal = ({
 };
 
 // --- Main App ---
-
+// main
 export default function App() {
   const [photos, setPhotos] = useState<Photo[]>(() => {
     try {
