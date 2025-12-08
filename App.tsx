@@ -350,7 +350,43 @@ export default function App() {
   const [photos, setPhotos] = useState<Photo[]>(() => {
     try {
       const saved = localStorage.getItem('charrose_gallery_photos');
-      return saved ? JSON.parse(saved) : [];
+      if (!saved) return [];
+
+      const parsedPhotos = JSON.parse(saved) as Photo[];
+
+      // 【核心修复】自动过滤掉那些硬盘上不存在的“幽灵”照片
+      if (fs) { // 确保 fs 模块已加载
+        const validPhotos = parsedPhotos.filter(p => {
+          // 如果是本地文件路径 (file:// 开头)
+          if (p.url.startsWith('file://')) {
+            try {
+              // 去掉 file:// 前缀，还原为真实路径
+              const cleanPath = p.url.replace('file://', '');
+              // 检查文件是否存在
+              const exists = fs.existsSync(cleanPath);
+              if (!exists) {
+                console.warn("Found missing photo, removing from cache:", cleanPath);
+              }
+              return exists;
+            } catch (err) {
+              return false; // 路径有问题，过滤掉
+            }
+          }
+          // 如果是旧版本的 Base64 图片，或者网络图片，保留它
+          return true;
+        });
+        
+        // 如果发现有无效照片被过滤了，顺便更新一下 localStorage，彻底清除它们
+        if (validPhotos.length !== parsedPhotos.length) {
+          setTimeout(() => {
+             localStorage.setItem('charrose_gallery_photos', JSON.stringify(validPhotos));
+          }, 1000);
+        }
+        
+        return validPhotos;
+      }
+      
+      return parsedPhotos;
     } catch (e) {
       console.error("Failed to load photos from local storage", e);
       return [];
