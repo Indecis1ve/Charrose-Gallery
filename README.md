@@ -53,21 +53,17 @@
 ### 1. 克隆项目
 ```bash
 git clone [[https://github.com/您的用户名/charrose-gallery.git](https://github.com/Indecis1ve/Charrose-Gallery)]
-cd charrose-gallery
 ```
 
 ### 2. 安装依赖
 
-由于使用了 Electron，建议设置国内镜像源以加速下载（中国大陆用户）：
+
 
 ```bash
-# 安装依赖
+# 安装依赖，项目根目录下运行
 npm install
 ```
-```bash
-# 设置 Electron 镜像
-npm config set ELECTRON_MIRROR [https://npmmirror.com/mirrors/electron/](https://npmmirror.com/mirrors/electron/)
-```
+
 
 ### 3. 配置 API 密钥
 
