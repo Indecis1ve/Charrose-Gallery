@@ -49,6 +49,7 @@
 ### 环境要求
 * Node.js (建议 v18 或更高版本)
 * Google Gemini API Key ([点击这里免费申请](https://aistudio.google.com/app/apikey))
+* 应用使用时打开电脑VPN
 
 ### 1. 克隆项目
 ```bash
