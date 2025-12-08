@@ -13,6 +13,8 @@
 
 当您上传照片时，内置的 **Google Gemini AI** 会自动分析画面内容，为其生成一个富有诗意的标题、一段温暖怀旧的描述以及相关的标签。所有照片都**安全地存储在您的本地硬盘**中，既保证了隐私，又拥有优雅的画廊体验。
 
+
+
 ##  核心功能 (Features)
 
 * **AI 智能策展 (AI Smart Curation)**
@@ -43,6 +45,12 @@
 * **样式库**: Tailwind CSS
 * **AI 模型**: Google Generative AI SDK (`@google/genai`)
 * **图标库**: Heroicons (Custom Components)
+  
+##  界面 (UI)
+
+<img width="448.8" height="300" alt="927cb506d334c846ab9c4766cdfbe1d1" src="https://github.com/user-attachments/assets/72579531-209c-4a96-8711-8f82076a0bbf" />
+<img width="448.8" height="300" alt="image" src="https://github.com/user-attachments/assets/a022e4d9-abe3-436b-8508-70d1d2197673" />
+
 
 ## 🚀 快速开始 (Getting Started)
 
