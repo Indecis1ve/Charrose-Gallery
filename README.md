@@ -103,11 +103,11 @@ charrose-gallery/
 ├── release/           # [自动生成] 打包后的输出目录
 └── .env.local         # 配置文件 (需手动创建)
 ```
-## 🤝 贡献 (Contributing)
+##  贡献 (Contributing)
 
 欢迎提交 Issue 或 Pull Request！
 如果您有更好的 UI 设计建议或想添加新的 AI 功能（如按地点分类、人脸识别等），请随时分享。
 
-## 📄 许可证 (License)
+##  许可证 (License)
 
 本项目采用 [MIT License](LICENSE) 开源许可证。
