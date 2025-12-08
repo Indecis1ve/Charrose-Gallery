@@ -87,9 +87,7 @@ npm run electron:dev
 npm run electron:build
 ```
 
-构建完成后，文件将位于 release/ 文件夹中
-
-执行.exe: 安装程序，支持自定义安装路径
+构建完成后，文件将位于 release/ 文件夹中，执行.exe: 安装程序，支持自定义安装路径
 
 win-unpacked/: 免安装版。
 
