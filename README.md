@@ -68,7 +68,10 @@ npm install
 ### 3. 配置 API 密钥
 
 在项目根目录下创建一个名为 `.env.local` 的文件，并填入您的 Google Gemini API Key：
+
+```bash
 GEMINI_API_KEY=your_api_key_here
+```
 
 ### 4. 运行开发模式
 
@@ -80,9 +83,13 @@ npm run electron:dev
 
 如果您想生成可安装的 `.exe` 文件分享给朋友
 
+```bash
+npm run electron:build
+```
+
 构建完成后，文件将位于 release/ 文件夹中
 
-.exe: 安装程序，支持自定义安装路径
+执行.exe: 安装程序，支持自定义安装路径
 
 win-unpacked/: 免安装版。
 
