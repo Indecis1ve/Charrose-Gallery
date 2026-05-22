@@ -30,6 +30,7 @@ export const analyzeImage = async (base64Image: string, mimeType: string): Promi
             1. Generate a short, poetic, and elegant title (maximum 6 words).
             2. Write a warm, nostalgic, or artistic description (maximum 2 sentences).
             3. Generate 3-5 relevant keywords/tags.
+            4. Assess photographic quality deficiencies. Return any matched quality flags in a list: "blurry" (out of focus, motion blur), "dark" (extremely underexposed or black), "low-light" (high noise), "screenshot", "duplicate-like" if applicable.
             Return the result in JSON format.`
           },
         ],
@@ -44,9 +45,13 @@ export const analyzeImage = async (base64Image: string, mimeType: string): Promi
             tags: { 
               type: Type.ARRAY,
               items: { type: Type.STRING }
+            },
+            qualityFlags: {
+              type: Type.ARRAY,
+              items: { type: Type.STRING }
             }
           },
-          required: ["title", "description", "tags"],
+          required: ["title", "description", "tags", "qualityFlags"],
         }
       }
     });
@@ -65,6 +70,7 @@ export const analyzeImage = async (base64Image: string, mimeType: string): Promi
       title: "Untitled Moment",
       description: "A captured memory waiting to be told.",
       tags: ["memory", "photo"],
+      qualityFlags: [],
     };
   }
 };
